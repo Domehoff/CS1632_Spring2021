@@ -1,0 +1,23 @@
+Test Cases:
+
+  IDENTIFIER: [TEST-ARGS-TOO-MANY]
+  	TEST CASE: [Testing more than the 4 arguments the program takes]
+  	PRECONDITIONS: [Unchanged]
+  	EXECUTION STEPS: [Input 5 or more arguments as the user]
+  	POSTCONDITIONS: [ *EXPECTED* state of the system after performing execution steps]
+
+  IDENTIFIER: [TEST-ARGS-NOT-ENOUGH]
+    TEST CASE: [Testing less than the 4 arguments the program takes]
+    PRECONDITIONS: [Unchanged]
+    EXECUTION STEPS: [Inputting not enough (fewer than the required 4) arguments as the user]
+    POSTCONDITIONS: [ *EXPECTED* state of the system after performing execution steps]
+
+
+Defects:
+
+ IDENTIFIER: [A unique number or string (e.g. BUG-ARGS-NUMBER-FIVE-ARGS)]
+ SUMMARY: [A one sentence description of defect]
+ DESCRIPTION: [A detailed description of everything the tester discovered]
+ REPRODUCTION STEPS: [Preconditions + Steps to reproduce (similar to test case execution steps)]
+ EXPECTED BEHAVIOR: [What you expected according to requirements]
+ OBSERVED BEHAVIOR: [What you *ACTUALLY* saw]
