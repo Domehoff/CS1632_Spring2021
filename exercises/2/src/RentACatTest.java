@@ -7,6 +7,10 @@ import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.mockito.*;
 
+// to run:
+// cmd
+// cd exercise 2 dir
+// 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RentACatTest {
 
@@ -65,7 +69,7 @@ public class RentACatTest {
 
 	@Test
 	public void testGetCatNullNumCats0() {
-		// TODO
+		assertNull(r.getCat(2));
 	}
 
 	/**
