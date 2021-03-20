@@ -1,0 +1,56 @@
+{
+  "id": "c30b3422-1b50-44d7-9501-f1d7c7f0cbc2",
+  "version": "2.0",
+  "name": "CS1632 D3 ",
+  "url": "https://cs1632.appspot.com/",
+  "tests": [{
+    "id": "379606bd-57e7-46bd-b7e7-b24c1bdd580f",
+    "name": "FUN-WELCOME",
+    "commands": [{
+      "id": "9dae7d30-dc4b-43c6-802f-0d56f0549e8a",
+      "comment": "",
+      "command": "open",
+      "target": "https://cs1632.appspot.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4264eda-e174-4dad-85b6-8e4e4b598299",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.jumbotron > .lead",
+      "targets": [
+        ["css=.jumbotron > .lead", "css:finder"],
+        ["xpath=//main/div/p", "xpath:position"]
+      ],
+      "value": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\\n- Brian W. Kernighan"
+    }]
+  }, {
+    "id": "f85b3c1a-1b52-4a57-a470-d5fa41c8d417",
+    "name": "FUN-LINKS",
+    "commands": [{
+      "id": "b39cb222-b4a2-4e56-913c-826efcb1cc86",
+      "comment": "",
+      "command": "open",
+      "target": "https://cs1632.appspot.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45e68eef-01bf-4552-a02f-fdc0266d1732",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "64aee5aa-84be-4745-8496-824e39bcda10",
+    "name": "Deliverable3",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["379606bd-57e7-46bd-b7e7-b24c1bdd580f"]
+  }],
+  "urls": ["https://cs1632.appspot.com/"],
+  "plugins": []
+}
