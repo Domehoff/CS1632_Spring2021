@@ -59,6 +59,10 @@ public class D3Test {
       List<WebElement> elements = driver.findElements(By.cssSelector("li:nth-child(5) > img"));
       assert(elements.size() > 0);
     }
+    {
+      List<WebElement> elements = driver.findElements(By.cssSelector("li:nth-child(7) > img"));
+      assert(elements.size() == 0);
+    }
   }
   @Test
   public void fUNFACT() {

@@ -367,10 +367,17 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "4d5025bc-f708-4918-9133-1bce9296bfdd",
+      "id": "2816cee9-f39f-402f-8d44-4d97ea75ae92",
       "comment": "",
       "command": "assertElementPresent",
       "target": "css=li:nth-child(5) > img",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d5025bc-f708-4918-9133-1bce9296bfdd",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=li:nth-child(7) > img",
       "targets": [],
       "value": ""
     }]
