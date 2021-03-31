@@ -8,12 +8,12 @@ import java.util.Scanner;
 */
 
 public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
-	private static Random rand;
+	private Random rand;
 
-	private static ArrayList<Boolean> targets;
-	private static int remainingTargetNum;
+	private ArrayList<Boolean> targets;
+	private int remainingTargetNum;
 
-	private static int roundNum;
+	private int roundNum;
 
 	/**
 	 * Constructor. Creates 4 targets for the player to shoot. Not a particularly
@@ -24,7 +24,6 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	DrunkCarnivalShooterImpl() {
 		rand = new Random();
 		targets = new ArrayList<Boolean>();
-		targets = null;
 		remainingTargetNum = 4;
 		for (int i = 0; i < remainingTargetNum; i++) {
 			targets.add(true);
