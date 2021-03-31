@@ -65,7 +65,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 			if (standing) {
 				buff.append("  ||  ");
 			} else {
-			buff.append("      ");
+				buff.append("      ");
 			}
 		}
 		return buff.toString();
