@@ -1,10 +1,12 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import gov.nasa.jpf.vm.Verify;
+import static org.junit.Assert.*;
 
 /**
  * Code by @author Wonsun Ahn
- * 
+ *
  * <p>Uses the Java Path Finder model checking tool to check DrunkCarnivalShooter
  * shoot method for all scenarios. It enumerates all possible states of the
  * targets as well as all possible target choices by the user.
@@ -23,6 +25,10 @@ public class DrunkCarnivalShooterTest {
 	@Before
 	public void setUp() {
 		targets = new boolean[4];
+		targetChoice = Verify.getInt(0,3);
+		for(int i = 0; i < 4; i++){
+			targets[i] = Verify.getBoolean();
+		}
 		/*
 		 * TODO: Use the Java Path Finder Verify.getInt(int min, int max) API to
 		 * generate choices for targetChoice. It should take values 0-3. Also, generate
@@ -57,7 +63,7 @@ public class DrunkCarnivalShooterTest {
 
 	/**
 	 * Test case for boolean shoot(int t, StringBuilder builder).
-	 * 
+	 *
 	 * <p>Preconditions: Create StringBuilder builder = new StringBuilder();
 	 * <br>Execution steps: Call shooter.shoot(targetChoice, builder);
 	 * <br>Invariant: The number of targets which returns true on shooter.isTargetStanding(i)
@@ -67,11 +73,21 @@ public class DrunkCarnivalShooterTest {
 	public void testShoot() {
 		// TODO: Implement
 
+		StringBuilder sb = new StringBuilder();
+		shooter.shoot(targetChoice,sb);
+		int remainingTargets = shooter.getRemainingTargetNum();
+		int targetCount = 0;
+		for(int i = 0; i < 4;i++){
+			if(shooter.isTargetStanding(i))
+				targetCount++;
+		}
+		assertEquals(shooter.getRemainingTargetNum(),targetCount);
+
 		/*
 		 * Currently, it just prints out the failString to demonstrate to you all the
 		 * cases considered by Java Path Finder. If you called the Verify API correctly
 		 * in setUp(), you should see all combinations of targets and targetChoices:
-		 * 
+		 *
 		 * Failure in Round #0:                         (targetChoice=0):
 		 * Failure in Round #0:                    ||   (targetChoice=0):
 		 * Failure in Round #0:              ||         (targetChoice=0):
@@ -85,9 +101,9 @@ public class DrunkCarnivalShooterTest {
 		 * Failure in Round #0:  ||    ||          ||   (targetChoice=3):
 		 * Failure in Round #0:  ||    ||    ||         (targetChoice=3):
 		 * Failure in Round #0:  ||    ||    ||    ||   (targetChoice=3):
-		 * 
+		 *
 		 * PLEASE COMMENT OUT when you are done implementing.
 		 */
-		System.out.println(failString);
+		//System.out.println(failString);
 	}
 }

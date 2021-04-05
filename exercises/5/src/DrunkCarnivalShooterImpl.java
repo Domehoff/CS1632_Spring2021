@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import gov.nasa.jpf.vm.Verify;
+import gov.nasa.jpf.annotation.FilterField;
+
+//@FilterField private int roundNum;
 
 /**.
 * DrunkCarnivalShooter: A carnival shooter with four targets, but while drunk!
@@ -13,7 +17,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	private ArrayList<Boolean> targets;
 	private int remainingTargetNum;
 
-	private int roundNum;
+	@FilterField private int roundNum;
 
 	/**
 	 * Constructor. Creates 4 targets for the player to shoot. Not a particularly
@@ -85,10 +89,13 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 		roundNum++;
 		// Shoot at aimed target
 		int newT = shootFuzz(t, builder);
-		if (takeDownTarget(newT)) {
+		if(newT < 0 || newT > 3){
+			builder.append("You miss! \"Do or do not. There is no try.\", Yoda chides.\n");
+			return false;
+		}else if (takeDownTarget(newT)) {
 			builder.append("You hit target #" + newT);
 			builder.append("! \"The Force is strong with this one.\", Darth opines.\n");
-			remainingTargetNum--;
+			//remainingTargetNum--;
 			return true;
 		} else {
 			builder.append("You miss! \"Do or do not. There is no try.\", Yoda chides.\n");
@@ -150,7 +157,8 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 		while (true) {
 			System.out.println(shooter.getRoundString());
 			System.out.println("Choose your target (0-3): ");
-			int t = scanner.nextInt();
+			//int t = scanner.nextInt();
+			int t = Verify.getInt(0, 3);
 
 			// Shoot the target
 			StringBuilder builder = new StringBuilder();
